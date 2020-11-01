@@ -24,10 +24,8 @@ data = ['H4', 'C9', 'S4', 'D2', 'C3']
 
 for i in range(len(data)):
   minj = -1
-  min = 32
   for j in range(i, len(data)):
-    if min > int(data[j][1]):
-      min = int(data[j][1])
+    if int(data[minj][1]) > int(data[j][1]):
       minj = j
   tmp = data[minj]
   data[minj] = data[i]
