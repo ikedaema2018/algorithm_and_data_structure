@@ -9,7 +9,7 @@ data = [
 ]
 
 class Queue:
-  MAX = 100000
+  MAX = 100
   def __init__(self, data):
     self.data = data
     self.head = 0
@@ -19,13 +19,16 @@ class Queue:
       return self.tail <= self.head
 
   def is_full(self):
-    return self.tail >= self.MAX - 1
+    return self.head == (self.tail + 1) % self.MAX
     
   def dequeue(self):
     if self.is_empty():
       raise Exception('underflow')
 
-    self.head += 1
+    if self.head + 1 == self.MAX:
+      head = 0
+    else:
+      self.head += 1
     return self.data[self.head - 1]
 
   def enqueue(self, x):
