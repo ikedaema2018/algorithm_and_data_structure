@@ -1,7 +1,7 @@
 # 二部探索
 
-s = [1, 2, 3, 4, 5]
-t = [3, 4, 1]
+s = [1, 2, 3, 4]
+t = [4]
 
 def binary_search(s, key):
   left = 0
@@ -9,10 +9,13 @@ def binary_search(s, key):
   
   while left < right:
     mid = (left + right) // 2
+    print("mid", mid)
+    print("right", right)
+    print("left", left)
     if s[mid] == key:
       return True
     elif s[mid] < key:
-      left = mid + 1
+      left = mid + 1 # なぜ+1しているのかよくわからない
     else:
       right = mid
   return False

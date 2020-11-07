@@ -19,3 +19,4 @@ for i in t:
     count += 1
 print(count)
 print(time.time() - start)
+
