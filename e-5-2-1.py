@@ -1,7 +1,8 @@
 # whileをもちいて線形探索を高速化
-
-s = [1, 2, 3, 4, 5]
-t = [3, 4, 1]
+import time
+start = time.time()
+s = range(0, 1000)
+t = range(500, 1500)
 
 def linerSearch(s, key):
   i = 0
@@ -14,7 +15,7 @@ def linerSearch(s, key):
 
 count = 0
 for i in t:
-  if linerSearch(s, i):
+  if linerSearch(list(s), i):
     count += 1
 print(count)
-    
+print(time.time() - start)

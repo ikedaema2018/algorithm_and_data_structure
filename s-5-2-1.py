@@ -1,7 +1,9 @@
 # 線形探索
 
-s = [1, 2, 3, 4, 5]
-t = [3, 4, 1]
+import time
+start = time.time()
+s = range(0, 1000)
+t = range(500, 1500)
 
 count = 0
 
@@ -15,3 +17,5 @@ for i in t:
 
 
 print(count)
+print(time.time() - start)
+
