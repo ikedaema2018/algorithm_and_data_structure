@@ -1,7 +1,7 @@
 def partition(A, first, last):
   x = A[last]
   i = first - 1
-  for j in range(first, last - 1):
+  for j in range(first, last):
     if A[j] <= x:
       i += 1
       print(j)
